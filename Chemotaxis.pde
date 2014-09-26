@@ -5,7 +5,7 @@ Bacteria [] colony;
  {     
  	size(400, 400);
  	//initialize bacteria variables here
- 	colony = new Bacteria[150];   
+ 	colony = new Bacteria[350];   
  	for(int i = 0; i < colony.length; i++)
  	{
  		colony[i] = new Bacteria();
@@ -38,8 +38,22 @@ Bacteria [] colony;
 
  	void move()
  	{
- 		myX = myX + (int)(Math.random()*3)-1;
- 		myY = myY + (int)(Math.random()*3)-1;
+ 		if (mouseX < myX)
+ 		{
+ 			myX = myX - (int)(Math.random()*2)-1;
+ 		}
+ 		if(mouseX > myX)
+ 		{
+ 			myX = myX + (int)(Math.random()*2)+1;
+ 		}
+ 		if(mouseY < myY)
+ 		{
+ 			myY = myY - (int)(Math.random()*2)-1;
+ 		}
+ 		if(mouseY > myY)
+ 		{
+ 			myY = myY + (int)(Math.random()*2)+1;
+ 		}
  	}
 
  	void show() 
